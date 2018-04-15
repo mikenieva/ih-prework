@@ -5,9 +5,9 @@ let rover = {
     fullDirection: "North",
     x: 0,
     y: 0,
-    travelLog: []
+    travelLog: [],
+    image: "<img src=\'img/marsrover.png\' style=\'width:30px\';>"
 }
-
 
 console.log("Welcome to the game");
 console.log("You are going to drive a Rover on the space. 🚀 ");
@@ -61,6 +61,7 @@ function turnRight(rover){
 }
 
 function moveForward(rover){
+  document.getElementById(rover.x + "-" + rover.y).innerHTML= " ";
   switch (rover.direction) {
     case "W":
       if (rover.x == 0){
@@ -96,10 +97,12 @@ function moveForward(rover){
   }
   console.log("The Rover's coordinates are: " + rover.x + "," + rover.y + " and it's pointing to the " + rover.fullDirection);
   console.log("=====");
+  document.getElementById(rover.x + "-" + rover.y).innerHTML= rover.image;
   getLog(rover);
 }
 
 function moveBackward(rover){
+  document.getElementById(rover.x + "-" + rover.y).innerHTML= " ";
   switch (rover.direction) {
     case "W":
       if (rover.x > 10){
@@ -135,6 +138,8 @@ function moveBackward(rover){
   }  
   console.log("The Rover's coordinates are: " + rover.x + "," + rover.y + " and it's pointing to the " + rover.fullDirection);
   console.log("=====");
+  
+  document.getElementById(rover.x + "-" + rover.y).innerHTML= rover.image;
   getLog(rover);
 }
 
@@ -160,3 +165,4 @@ function commands(letters) {
 function getLog(rover){
     rover.travelLog.push("(" + rover.x + ", " + rover.y +")" );
 }
+

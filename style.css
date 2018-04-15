@@ -1,0 +1,15 @@
+body{
+    margin: 0;
+}
+
+div#board {
+    background-image: url("http://marsxplr.com/_upl/Christian4Macfloor-orig.jpg");
+}
+
+div#board div {
+    vertical-align: top;
+}
+
+div#board div.cuadro {
+    width: 35px; height:31px; border: 1px solid black;
+}
